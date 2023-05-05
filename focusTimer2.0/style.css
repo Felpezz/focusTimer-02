@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --ff-numbers: 'Roboto', sans-serif;
+  --bg-color:#E5E5E5; 
+  --num-controls-color: #323238;
+  --hover-card-color: #02799D;
+  --figure-card-color: #d7d7dc;
+}
+
+body {
+  color: var(--num-controls-color);
+  font-size: clamp(4rem,4rem + 10vw, 11.2rem);
+  font-family: var(--ff-numbers);
+
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  gap: clamp(4rem, 4rem + 10vw, 19rem);
+ 
+}
+
+main {
+  align-self: center;
+  justify-self: right;
+}
+
+aside {
+  align-self: center;
+  
+}
+
+.timer {
+  display: flex;
+}
+
+.setTimer {
+  position: absolute;
+  left: 0;
+  height: fit-content;
+}
+
+.setTimer svg path {
+  fill: #323238;
+}
+
+.rain svg path {
+fill: var(--num-controls-color);
+}
+
+.enviromentSound {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+  width: fit-content;
+}
+
+.enviromentSound button {
+  height: 15rem;
+  width: clamp(13.8rem, 4vh + 2rem, 15rem); 
+  background-color: var(--figure-card-color);
+  border-radius: 2.4rem;
+}
+
+.forest:hover, .rain:hover,
+.conversationSounds:hover, .campingFire:hover {
+  transition: .1s;
+  transform: scale(1.1);
+}
+
+button{
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media(max-width:960px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    font-size: 11rem;
+  }
+
+  .setTimer {
+    position: relative;
+    max-width: fit-content;
+    align-self: center;
+  }
+
+  .controls {
+    display: flex;
+    padding-top: 2rem;
+    gap: clamp(2rem, 4rem + 2vw, 3rem);
+  }
+}
